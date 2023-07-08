@@ -1,0 +1,291 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}         % https://texfaq.org/FAQ-why-inp-font
+\usepackage{fontawesome}         % icons
+\usepackage{geometry}            % page dimensions
+\usepackage{multicol}            % multi-column environments
+\usepackage{textcomp}            % bullet symbol
+\usepackage{tcolorbox}           % color boxes using tikz
+\usepackage[explicit]{titlesec}  % formats for section headings
+\usepackage{xcolor}              % color control, like green!20!white
+\usepackage{hyperref}            % hyperlinks; this should be last
+
+% Page dimensions
+\geometry{
+  left=0.6in,
+  right=0.6in,
+  top=0.4in,
+  bottom=0.4in
+}
+
+% Define "\CC" as a command to typeset "C++" nicely
+\def\CC{{C\nolinebreak[4]\hspace{-.05em}\raisebox{.4ex}{\tiny\bf ++}}}
+
+% Bullet style in bulleted lists
+\renewcommand{\labelitemi}{\textopenbullet}
+
+% Amount of space before paragraphs
+\parskip 5pt
+
+% Amount of space before and after a multicols environment
+\multicolsep 5pt
+
+% Don't indent the first line of a paragraph
+\parindent 0pt
+
+% No page numbers
+\pagestyle{empty}
+
+% Hyperlink configuration
+\hypersetup{
+  colorlinks=true,
+  urlcolor=blue!80!black,
+}
+
+% Section header style (this behavior comes from the titlesec package)
+\titleformat{\section} % the sectioning command to be redefined
+            [hang] % shape
+            {\sffamily\color{red}} % format to be applied
+            {\thesection} % label
+            {0pt} % sep
+            {\Large #1} % before code
+            [\titlerule{}] % after code
+
+% Subsection header style (from titlesec)
+\titleformat{\subsection} % the sectioning command to be redefined
+            [hang] % shape
+            {\large\bfseries} % format to be applied
+            {\thesubsection} % label
+            {0pt} % sep
+            {\begin{tcolorbox}[nobeforeafter]#1\end{tcolorbox}}  % before code
+            [] % after code
+
+% Section spacing (moves sections 15pts into the left margin)
+\titlespacing*{\section} % the sectioning command
+              {-15pt} % left
+              {0pt} % before-sep
+              {5pt} % after-sep
+              [0pt] % right-sep
+
+% Subsection spacing
+\titlespacing*{\subsection} % the sectioning command
+              {0pt} % left
+              {10pt} % before-sep
+              {2pt} % after-sep
+              [0pt] % right-sep
+
+% Remove page number at bottom of page
+\thispagestyle{empty}
+
+% Adjust spacing in enumerate environment
+\makeatletter
+\AtBeginDocument {
+  \renewcommand{\@listi} {
+    \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{3pt}
+    \setlength{\partopsep}{5pt}
+    \setlength{\parskip}{0pt}
+    \setlength{\topsep}{0pt}
+    \setlength{\leftmargin}{30pt}
+  }
+  \renewcommand{\@listii} {
+    \setlength{\itemsep}{5pt}
+    \setlength{\topsep}{0pt}
+  }
+}
+\makeatother
+
+% Tag style (the green pillboxes used to list technologies)
+\newtcbox{\tag}{
+  on line,
+  arc=7pt,
+  boxrule=1pt,
+  boxsep=0pt,
+  top=2pt,
+  bottom=2pt,
+  left=6pt,
+  right=6pt,
+  before upper={\rule[-2pt]{0pt}{12pt}},
+  colframe=green!50!black,
+  colback=green!20!white}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+  {\sffamily\huge\textbf{Chris Clark}}
+\end{center}
+
+\tcbset{topbar/.style={
+    frame empty,
+    box align=top,
+    width=(\linewidth-2mm)/2,
+    nobeforeafter}}
+
+% Note that "topbar" is a self-defined style defined with tcbset
+\begin{tcolorbox}[
+    topbar,
+    boxsep=0pt,
+    left=1pt,
+    coltext=black!60,
+    colback=white,
+    halign=left,
+    fontupper=\itshape\bfseries\large]
+
+  I have a passion for programming, designing systems, and learning with people.
+  I strive for simplicity and elegance. I help teams be productive through
+  clarity, vision, and teamwork.
+
+\end{tcolorbox}
+\begin{tcolorbox}[
+    topbar,
+    left=1pt,
+    colback=yellow!25!white]
+  \begin{tabular}{r l}
+    \faEnvelope\      & \texttt{cfclrk@gmail.com} \\
+    \faHome\          & \url{https://cfclrk.com} \\
+    \faGithub\        & \url{http://github.com/cfclrk} \\
+    \faStackOverflow\ & \url{http://stackoverflow.com/u/340613} \\
+    \faLinkedin\      & \url{http://linkedin.com/in/cfclrk} \\
+  \end{tabular}
+\end{tcolorbox}
+
+% Section: Skills
+% ------------------------------------------------------------------------------
+
+\section*{Skills}
+
+\begin{multicols}{2}
+  \raggedright
+
+  \subsection*{Most Recent and Familiar}
+
+  \textbf{Programming Languages}: Clojure, Python, Bash, SQL
+
+  \textbf{Tools/Services}: Git, Bazel, AWS, Terraform
+
+  \subsection*{Worked with in the Past}
+
+  \textbf{Programming Languages}: Rust, Go, Javascript, Java, \LaTeX, C, \CC,
+  MATLAB/Octave, CSS/LESS/SASS
+
+  \textbf{Tools/Services}: AWS CDK, Azure, Ansible, Kubernetes, Packer, Webpack,
+  AngularJS/Vue.js/React
+
+  \vfill
+  \columnbreak
+
+\end{multicols}
+
+% Section: Experience
+% ------------------------------------------------------------------------------
+
+\section*{Experience}
+
+\subsection*{Senior Clojure Engineer at Splash Financial \hfill March 2022 -- Present}
+
+Work on Clojure microservices to automate underwriting loans.
+
+\tag{Clojure} \tag{Bazel} \tag{PostgreSQL} \tag{AWS} \tag{Terraform}
+
+\subsection*{Cloud Engineer at IronNet \hfill March 2019 -- March 2022}
+
+As a member of the \textbf{\textsl{Cloud Infrastructure}} team at IronNet, I
+helped oversee cloud-related endeavors and develop internal tooling. Some
+things that I personally worked on:
+
+\begin{itemize}
+\item Designed and implemented a new data-ingest pipeline that leverages AWS
+  managed services (like ALB, Kinesis, and ECS) in order to be more scalable and
+  reliable than previous designs.
+\item Created and improved various internal tooling (mostly in Python) for
+  things like:
+
+  \begin{multicols}{2}
+    \raggedright
+    \begin{itemize}
+    \item Managing Kubernetes clusters
+    \item Deploying applications (usually to Kubernetes)
+    \item Creating AWS accounts
+    \item Maintaining cross-account permissions
+    \item Leveraging AWS spot instances
+    \end{itemize}
+  \end{multicols}
+
+\end{itemize}
+
+\tag{Python} \tag{Go} \tag{Bash} \tag{Kubernetes} \tag{helm} \tag{AWS}
+\tag{Azure} \tag{Terraform}
+
+\subsection*{QA Engineer at Fugue \hfill Jul 2015 -- Jan 2019}
+
+The QA team was in charge of designing and implementing a test harness for Fugue
+(which at the time was a platform for defining, creating, and monitoring
+infrastructure in AWS and Azure, sort of like Terraform). I created much of this
+system, as well as a variety of general-purpose internal tooling.
+
+\begin{itemize}
+\item Helped design and create an end-to-end test harness for Fugue (Python,
+  Bash, Go)
+\item Wrote a utility for completely clearing AWS accounts (Python)
+\item Created an automated pipeline for building test VMs in AWS and Azure
+  (Ansible, Packer, Go, Azure Resource Manager)
+\item Created CI builds in Travis and Concourse
+\item Devised a literate-programming approach for running and documenting tests
+\end{itemize}
+
+\tag{Python} \tag{Bash} \tag{Clojure} \tag{Go} \tag{Haskell} \tag{AWS}
+\tag{Azure} \tag{Ansible} \tag{Packer} \tag{Concourse}
+
+\subsection*{Web Developer at Wells Fargo \hfill Feb 2015 -- Jul 2015}
+
+Member of a small team creating an internal auditing and task-tracking
+application.
+
+\tag{Java} \tag{Spring} \tag{Hibernate} \tag{YUI} \tag{Javascript}
+
+\subsection*{Startup Entrepreneur \hfill May 2014 -- Jan 2015}
+
+I \textit{really} wanted to create my own business. It was primarily focused on
+two business ventures:
+
+\begin{itemize}
+\item Worked with a medical clinic to create a web application that helped
+  provide communication between doctors, patients, nurses, and call center
+  operators.
+
+\item Partnered with another small team to build a recruiting platform for
+  high-level executives.
+\end{itemize}
+
+\tag{MEAN stack} \tag{Docker} \tag{Java 8} \tag{Scala} \tag{MySQL} \tag{Bash}
+\tag{\LaTeX}
+
+\subsection*{Consultant at Red Hat \hfill Aug 2011 -- May 2014}
+
+I traveled to client sites and worked on a variety of projects. Mostly, this
+involved integrating the JBoss suite of products which Red Hat had recently
+acquired.
+
+\tag{Java} \tag{JBoss} \tag{JBoss Rules} \tag{jBPM} \tag{Hibernate}
+\tag{MyBatis} \tag{Grails} \tag{AngularJS}
+
+% Section: Education
+% ------------------------------------------------------------------------------
+
+\section*{Education}
+
+\textsc{University of Virginia}, School of Engineering and Applied Science,
+Charlottesville, VA \\
+\textit{B.S. in Computer Science, May 2011}
+
+% Section: Outside of Work
+% ------------------------------------------------------------------------------
+
+\section*{Outside of Work}
+
+I love family time, baby time, reading, learning, and playing sports, espcially
+with other people. Sometimes I play around with Emacs and Elisp.
+
+\end{document}
