@@ -1,0 +1,189 @@
+% Based (but completely redesigned) on Resume in Latex Template by Sourabh Bajaj
+\documentclass[letterpaper, 11pt]{article}
+
+\pdfgentounicode=1
+
+% font
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{noto}
+
+% packages
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{scrextend}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{setspace}
+\usepackage{enumitem}
+
+\usepackage[left=1.25cm,right=1.25cm,top=2cm,bottom=2cm]{geometry}
+
+% custom
+
+% command macros
+\newcommand{\iconSpace}{\hspace{1px}}
+\newcommand{\bulletSpace}{\vspace{-8pt}}
+\newcommand{\hSpace}{\hspace{8px}}
+\newcommand{\secStartSpace}{\vspace{3pt}}
+\newcommand{\secEndSpace}{\vspace{5pt}}
+\newcommand{\spaceCollapse}{\vspace{-5pt}}
+% use the macro for work experience header
+% arg 1 = header title
+% arg 2 = position title (subtitle (in italics)
+% arg 3 = date
+\newcommand{\workHeader}[3]{
+\noindent \textbf{#1} \hfill \textbf{#3}\\
+	\textit{#2}
+}
+
+% line spacing
+% \linespread{1.15}
+
+% colors
+\definecolor{blue}{RGB}{14, 100, 237} % change the blue color if this one is not to your liking
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=blue,
+    urlcolor=blue,
+}
+
+% indent space
+\titlespacing{\section}{0pt}{1px}{2ex}
+
+% Sections formatting
+\titleformat{\section}{
+\vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\begin{document}
+
+% ------------- header ------------- %
+\begin{center} 
+	{\Large \textbf{Joe Smith}}\\
+	\vspace{1px}
+	% "footnotes" (icon + link)
+	{\footnotesize
+		\faicon{envelope} \href{mailto:joesmith@gmail.com}{joesmith@gmail.com} 
+		\hSpace
+		\faicon{globe} \iconSpace \href{joesmith.com}{joesmith.com} 
+		\hSpace 
+		\faicon{linkedin} \hspace{.1px} \href{https://www.linkedin.com/in/Joe-Smith/}{Joe-Smith} 
+		\hSpace
+		}\\
+	{\footnotesize
+		\faicon{github} \iconSpace \href{https://github.com/Joe-Smith}{Joe Smith}
+		\hSpace 
+		\faicon{phone} \iconSpace
+		(999) 999-9999
+		% \hSpace 
+		% \faicon{map-marker} \iconSpace
+		% Regina, SK
+	}
+\end{center}
+\spaceCollapse
+% ------------- end header ------------- %
+
+
+% ------------- education ------------- %
+\section{\color{blue} \textbf{Education}}
+\secStartSpace
+
+\begin{addmargin}[1em]{1em}
+	\textbf{University of America}\hfill \textbf{September 2019 - April 2023}\\
+	\setlength\parindent{1cm} B.Sc. Computing Science with Honors
+\end{addmargin}
+\secEndSpace
+% ------------- end education ------------- %
+
+
+% ------------- work experience ------------- %
+\section{\color{blue} \textbf{Work Experience}}
+\secStartSpace
+
+\begin{addmargin}[1em]{1em}
+		
+	\noindent \textbf{Joe's Garage} \hfill \textbf{September 2021 - Present}\\
+	\textit{Full-Stack Floor Cleaner}
+	\spaceCollapse
+	\begin{itemize}
+		\item Helped clean the floors in a team of 3
+		      \bulletSpace
+		\item Wrote \textbf{testable} and \textbf{well documented} code in Node.js/Nest.js backend and React frontend
+	\end{itemize}
+		
+	\workHeader{Examplar 2}{Co-founder}{September 2021 - Present} % create a work header like this or use the one seen above
+	\spaceCollapse
+	\begin{itemize}
+		\item Created an example for users \\most don't understand
+	\end{itemize}
+\end{addmargin}
+\secEndSpace
+% ------------- end experience ------------- %
+
+
+% ------------- projects ------------- %
+\section{\color{blue} \textbf{Projects}}
+\secStartSpace
+
+\begin{addmargin}[1em]{1em}
+		
+	% ------------- project 1 ------------- %
+	\noindent\href{https://github.com/Joe-Smith}{\textbf{Emoji Finder:}}  \hfill \textbf{June 2021} 
+		
+	\noindent A React application that finds the emojis you want via a search bar
+	\spaceCollapse
+	\begin{itemize}
+		\item \textbf{Technology/Tools:} React, JavaScript, CSS, HTML
+		      \bulletSpace
+		\item Source and working demo: \faicon{github} \href{https://github.com/Joe-Smith}{\underline{Joe-Smith.com/emojis-finder}}
+	\end{itemize}
+	% ------------- end project 1 ------------- %
+	
+	% ------------- project 2 ------------- %
+	\noindent\href{https://github.com/Joe-Smith}{\textbf{Emoji Finder 2:}}  \hfill \textbf{July 2021} 
+		
+	\noindent A React application that finds the emojis you want via a search bar but better
+	\spaceCollapse
+	\begin{itemize}
+		\item \textbf{Technology/Tools:} React, JavaScript, CSS, HTML
+		      \bulletSpace
+		\item Source and working demo: \faicon{github} \href{https://github.com/Joe-Smith}{\underline{Joe-Smith.com/emojis-finder}}
+	\end{itemize}
+	% ------------- end project 2 ------------- %
+		
+		
+\end{addmargin}
+\secEndSpace
+% ------------- end projects ------------- %
+
+
+% ------------- skills ------------- %
+\section{\color{blue} \textbf{Skills}}
+\secStartSpace
+
+\begin{addmargin}[1em]{1em}
+	\setstretch{1.125}
+	\noindent \textbf{Proficient:} JavaScript/TypeScript, Python, UwULang \\
+	\noindent \textbf{Familiar:} C\#, Java, SQL, APL \\
+	\noindent \textbf{Libraries:} React, React Native
+\end{addmargin}
+\secEndSpace
+% ------------- end skills ------------- %
+
+
+% ------------- achievements ------------- %
+\section{\color{blue} \textbf{Achievements}}
+\secStartSpace
+
+\begin{addmargin}[1em]{1em}
+	\begin{itemize}[itemsep=-2.25pt]
+		\item Joe Award \hfill  \textbf{2019}
+		\item Top of the Class \hfill \textbf{2014-2019}
+	\end{itemize}
+\end{addmargin}
+% ------------- end achievements ------------- %
+
+\end{document}
