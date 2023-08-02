@@ -112,7 +112,7 @@
 % resumeSectionType renders a bolded type to be used under a section, used as skill type here, middle element is used to keep ":"s in the same vertical line
 \newcommand{\resumeSectionType}[3]{
   \item\begin{tabular*}{0.96\textwidth}[t]{
-    p{0.15\linewidth}p{0.02\linewidth}p{0.81\linewidth}
+    p{0.21\linewidth}p{0.02\linewidth}p{0.81\linewidth}
   }
     \textbf{#1} & #2 & #3
   \end{tabular*}\vspace{-2pt}
@@ -168,7 +168,7 @@
   %\href{https://linkedin.com/in/jane-doe}{\uline{LinkedIn}} $|$ % row = 2, col = 1
   %\href{https://github.com/jane-doe}{\uline{GitHub}} $|$ % row = 2, col = 1
   %\href{https://leetcode.com/jane-doe}{\uline{Leetcode}} & % row = 2, col = 1
-  {Frontend developer | React, Next} &
+  {Devops Engineer} &
   Email: \href{mailto:mynameissajjad@gmail.com}{\uline{mynameissajjad@gmail.com}}  % row = 2, col = 2
    \\ 
   % row = 2, col = 2
@@ -182,7 +182,7 @@
 
 \section{about me}
 \small{
-Experienced \textbf{Next.js} Developer with a proven track record of building high-quality, performant web applications. Proficient in leveraging the power of \textbf{Next} and \textbf{React} to create scalable and efficient front-end solutions with strong expertise in component-based architecture, state management, and RESTful API integration. 
+A highly skilled and motivated DevOps Engineer with 3 years of experience in designing, implementing, and optimizing CI/CD pipelines, automating infrastructure, and ensuring seamless application deployments. Seeking to leverage my technical expertise and problem-solving skills to contribute to the success of a dynamic and innovative organization.
 }
 %--------------------------------------------
 
@@ -192,11 +192,16 @@ Experienced \textbf{Next.js} Developer with a proven track record of building hi
 
 \section{Technical Skills}
   \resumeHeadingListStart{}
-    \resumeSectionType{Languages}{:}{JavaScript, TypeScript, HTML, CSS}
-    \resumeSectionType{Frameworks}{:}{React, Next, Tailwind, Three.js}
+    \resumeSectionType{CI/CD}{:}{Jenkins, GitLab CI, HTML, CSS}
+    \resumeSectionType{Cloud Platforms}{:}{AWS, GCP}
     %\resumeSectionType{Libraries}{:}{Material, Redux, React Router}
     %\resumeSectionType{Databases}{:}{MySQL, Sqlite, PostgreSQL, MongoDB}
-    \resumeSectionType{Dev Tools}{:}{Git, Gitlab, Docker, CI/CD Pipelines}
+    \resumeSectionType{Containerization}{:}{Docker, Docker Compose, Kubernetes, Docker, CI/CD Pipelines}
+    \resumeSectionType{Infrastructure as Code}{:}{Terraform, Ansible } 
+    \resumeSectionType{Monitoring}{:}{Prometheus, Splunk}
+    \resumeSectionType{Web Servers}{:}{Nginx}
+    \resumeSectionType{DBMS}{:}{MySQL, PostgreSQL, MongoDB}
+
   \resumeHeadingListEnd{}
 %--------------------------------------------
 
@@ -206,18 +211,18 @@ Experienced \textbf{Next.js} Developer with a proven track record of building hi
 
 \section{Experience}
 \resumeHeadingListStart{}
-  \resumeQuadHeading{Next.js Developer}{May 2019 -- Present}
+  \resumeQuadHeading{Devops Engineer}{May 2019 -- Present}
   {Faico Holding - Steel Factory}{}
     \resumeItemListStart{}
-      \resumeItem{Developed reusable React components and implemented complex UI features using \textbf{Next.js} framework}
+      \resumeItem{managing cloud infrastructure and leveraging IaC tools like Terraform and Ansible.}
       \resumeItem{Experienced in designing and implementing \textbf{CI/CD pipelines} }
-            \resumeItem{Worked with \textbf{REST APIs} to retrieve and display data from databases}
-      \resumeItem{Created 3D visualizations and interactive design with \textbf{Three.js}}
-      \resumeItem{Collaborated closely with UX designers and back-end developers to create seamless and intuitive user interfaces}
-      \resumeItem{Implemented automated testing using \textbf{Jest} and \textbf{React Testing Library}}
+      \resumeItem{experience with containerization technologies, including Docker and orchestration platforms like Kubernetes.}
+      \resumeItem{automating routine tasks with scripting languages (e.g., Python, Bash) and configuration management tools}
+      \resumeItem{Skilled in monitoring and logging tools like Prometheus, Grafana, and ELK stack to ensure application performance and reliability}
+      \resumeItem{Collaborated closely with development teams to ensure seamless integration of continuous delivery practices and faster feedback loops.}
     \resumeItemListEnd{}
 
-  \resumeQuadHeading{Frontend Developer}{Apr 2016 -- Feb 2019}
+  \resumeQuadHeading{Backend Developer}{Apr 2016 -- Feb 2019}
   {Maghzafzar - Online Chess Game Platform}{}
     \resumeItemListStart{}
     	\resumeItem{Developed and maintained complex web applications using \textbf{React}}
